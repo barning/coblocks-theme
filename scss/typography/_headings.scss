@@ -83,3 +83,7 @@ h6,
 		@include font-size(18px);
 	}
 }
+
+.entry-title {
+	hyphens: auto;
+}
