@@ -1,6 +1,6 @@
 # CoBlocks WordPress Theme
 
-#### Notice: The CoBlocks WordPress theme in being deprecated in favor of the uber-flexible <a href="https://github.com/godaddy-wordpress/go">Go WordPress theme</a>. Go was built by the team who builds CoBlocks, and with it you'll have access to at least five global design styles, innovative design controls, header/footer variations, and WooCommerce support.
+#### Notice: The CoBlocks WordPress theme in being deprecated in favor of <a href="https://github.com/godaddy-wordpress/go">Go WordPress theme</a>. Since I like this theme a lot and also made a pull-request in the original repository myself, I will try to continue it.
 
 ## Development ##
 1. Clone the GitHub repository: `https://github.com/godaddy/coblocks-theme.git`
@@ -10,10 +10,8 @@
 5. Run the `build` gulp task to process build files and generate a zip.
 
 ## Contributions ##
-Please read the [guidelines for contributing](https://github.com/godaddy/coblocks-theme/blob/master/CONTRIBUTING.md) to CoBlocks. Anyone is welcome to contribute!
-
 There are various ways you can contribute:
 
-1. Raise an [Issue](https://github.com/godaddy/coblocks-theme/issues/new) on GitHub
+1. Raise an [Issue](https://github.com/barning/coblocks-theme/issues/new) on GitHub
 2. Send a pull request with your bug fixes and/or new features
-3. Provide feedback and suggestions on [enhancements](https://github.com/godaddy/coblocks-theme/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open)
+3. Provide feedback and suggestions on [enhancements](https://github.com/barning/coblocks-theme/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open)
