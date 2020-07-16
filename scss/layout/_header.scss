@@ -24,7 +24,7 @@
 	&__button {
 		padding: 5px;
 
-		.icon {
+		.svg-icon {
 			backface-visibility: hidden;
 			fill: $black;
 			position: relative;
@@ -34,12 +34,6 @@
 				&:hover {
 					opacity: 0.7;
 				}
-			}
-
-			&-night {
-				height: 30px;
-				top: 0.06em;
-				width: 30px;
 			}
 		}
 	}
@@ -101,21 +95,21 @@
 			}
 
 			a {
+				@include font-size(17px);
 				display: inline-block;
-				transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
 
 				@media only screen and (min-width: 600px) {
-					padding: .25em .6em;
+					padding: 0.25em 0.6em;
 				}
 
 				@media only screen and (min-width: 600px) and (max-width: 700px) {
 					@include font-size(16px);
-					padding: .25em .4em;
+					padding: 0.25em 0.4em;
 				}
 
 				@include hover {
 					&:hover {
-						opacity: .7;
+						color: $black;
 					}
 				}
 			}
@@ -124,7 +118,7 @@
 				opacity: .7;
 			}
 
-			&.current_page_item .icon {
+			&.current_page_item .svg-icon {
 				opacity: .7;
 			}
 		}

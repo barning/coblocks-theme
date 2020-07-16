@@ -1,11 +1,9 @@
 <?php
 /**
- * Auto Load Next Post ompatibility File
+ * Auto Load Next Post compatibility file.
  * See https://wordpress.org/plugins/auto-load-next-post/
  *
- * @package     @@pkg.name
- * @author      @@pkg.author
- * @license     @@pkg.license
+ * @package CoBlocks
  */
 
 if ( ! function_exists( 'coblocks_alnp_setup' ) ) :
@@ -13,7 +11,14 @@ if ( ! function_exists( 'coblocks_alnp_setup' ) ) :
 	 * Add Auto Load Next Post support.
 	 */
 	function coblocks_alnp_setup() {
-		add_theme_support( 'auto-load-next-post' );
+		add_theme_support(
+			'auto-load-next-post', array(
+				'content_container'    => 'main.site-main',
+				'title_selector'       => 'h1.entry-title',
+				'navigation_container' => 'nav.post-navigation',
+				'comments_container'   => 'div#comments',
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'coblocks_alnp_setup' );
@@ -33,9 +38,9 @@ function coblocks_alnp_post_divider() {
 	?>
 	<div class="alnp--read-more center-align">
 		<span id="alnp--read-more__text" class="display-inline-block sans-serif-font gray">
-			<?php echo esc_html( apply_filters( 'coblocks_post_up_next', esc_html__( 'Read my next article', '@@textdomain' ) ) ); ?>
+			<?php echo esc_html( apply_filters( 'coblocks_post_up_next', esc_html__( 'Read my next article', 'coblocks' ) ) ); ?>
 		</span>
-		<?php echo wp_kses( coblocks_get_svg( array( 'icon' => 'arrow-down' ) ), coblocks_svg_allowed_html() ); ?>
+		<?php echo coblocks_get_icon_svg( 'arrow-down', 20 ); ?>
 	</div>
 <?php
 }

@@ -4,9 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package     @@pkg.name
- * @author      @@pkg.author
- * @license     @@pkg.license
+ * @package CoBlocks
  */
 
 if ( ! function_exists( 'coblocks_night_toggle' ) ) :
@@ -22,9 +20,9 @@ if ( ! function_exists( 'coblocks_night_toggle' ) ) :
 
 		if ( $night || is_customize_preview() ) {
 			?>
-			<button id="night-mode-toggle" class="site-header__button header__button--night-mode button--chromeless<?php echo esc_attr( $visibility ); ?>" role="switch" aria-checked="false" aria-label="<?php esc_attr_e( 'Toggle Night Mode', '@@textdomain' ); ?>">
-				<?php echo wp_kses( coblocks_get_svg( array( 'icon' => 'night' ) ), coblocks_svg_allowed_html() ); ?>
-				<span class="screen-reader-text"><?php echo esc_html_x( 'Settings', 'settings button', '@@textdomain' ); ?></span>
+			<button id="night-mode-toggle" class="site-header__button header__button--night-mode button--chromeless<?php echo esc_attr( $visibility ); ?>" role="switch" aria-checked="false" aria-label="<?php esc_attr_e( 'Toggle Night Mode', 'coblocks' ); ?>">
+				<?php echo coblocks_get_icon_svg( 'night', 30 ); ?>
+				<span class="screen-reader-text"><?php echo esc_html_x( 'Settings', 'settings button', 'coblocks' ); ?></span>
 			</button>
 			<?php
 		}
@@ -69,8 +67,8 @@ if ( ! function_exists( 'coblocks_search_toggle' ) ) :
 		if ( $search || is_customize_preview() ) {
 			?>
 			<button id="search-toggle" type="submit" class="button--chromeless search-toggle search-submit <?php echo esc_attr( $search_visibility ); ?>">
-				<?php echo wp_kses( coblocks_get_svg( array( 'icon' => 'search' ) ), coblocks_svg_allowed_html() ); ?>
-				<span class="screen-reader-text"><?php echo esc_html_x( 'Search', 'submit button', '@@textdomain' ); ?></span>
+				<?php echo coblocks_get_icon_svg( 'search', 25 ); ?>
+				<span class="screen-reader-text"><?php echo esc_html_x( 'Search', 'submit button', 'coblocks' ); ?></span>
 			</button>
 		<?php
 		}
@@ -130,18 +128,18 @@ if ( ! function_exists( 'coblocks_posted_on' ) ) :
 
 		// Check for link post format and output a link icon if it is one.
 		$link        = get_post_meta( get_the_ID(), '_coblocks_link', true );
-		$format_icon = ( has_post_format( 'link' ) && $link ) ? coblocks_get_svg( array( 'icon' => 'chain' ) ) : null;
+		$format_icon = ( has_post_format( 'link' ) && $link ) ? coblocks_get_icon_svg( 'chain', 26 ) : null;
 
 		// Add a sticky icon, if it's necessary.
-		$sticky_icon = ( is_sticky() && is_home() ) ? coblocks_get_svg( array( 'icon' => 'thumb-tack' ) ) : null;
+		$sticky_icon = ( is_sticky() && is_home() ) ? coblocks_get_icon_svg( 'thumb-tack', 26 ) : null;
 
 		// Add a lock icon, if it's necessary.
-		$password_icon = ( post_password_required() && is_home() ) ? coblocks_get_svg( array( 'icon' => 'lock' ) ) : null;
+		$password_icon = ( post_password_required() && is_home() ) ? coblocks_get_icon_svg( 'lock', 26 ) : null;
 
 		// Get the author name; wrap it in a link.
 		$byline = sprintf(
 			/* translators: %s: post author */
-			'<span>' . __( 'by %s', '@@textdomain' ) . '</span>',
+			'<span>' . __( 'by %s', 'coblocks' ) . '</span>',
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
 		);
 
@@ -160,7 +158,7 @@ if ( ! function_exists( 'coblocks_posted_on' ) ) :
 		);
 
 		// Finally, let's write all of this to the page.
-		echo '<div class="entry-meta h5 medium sans-serif-font gray">' . wp_kses( $password_icon, coblocks_svg_allowed_html() ), wp_kses( $sticky_icon, coblocks_svg_allowed_html() ), wp_kses( $format_icon, coblocks_svg_allowed_html() ) . '<span class="posted-on">' . wp_kses( coblocks_time_link(), $allowed_html ) . '</span><span class="byline ' . esc_attr( $author_visibility ) . '"> ' . wp_kses( $byline, $allowed_html ) . '</span></div>';
+		echo '<div class="entry-meta h6 medium sans-serif-font gray">' . wp_kses( $password_icon, coblocks_svg_allowed_html() ), wp_kses( $sticky_icon, coblocks_svg_allowed_html() ), wp_kses( $format_icon, coblocks_svg_allowed_html() ) . '<span class="posted-on">' . wp_kses( coblocks_time_link(), $allowed_html ) . '</span><span class="byline ' . esc_attr( $author_visibility ) . '"> ' . wp_kses( $byline, $allowed_html ) . '</span></div>';
 
 	}
 endif;
@@ -185,13 +183,13 @@ if ( ! function_exists( 'coblocks_time_link' ) ) :
 			get_the_date(),
 			get_the_modified_date( DATE_W3C ),
 			get_the_modified_date(),
-			apply_filters( 'coblocks_post_meta_updated_text', esc_html__( 'Published', '@@textdomain' ) )
+			apply_filters( 'coblocks_post_meta_updated_text', esc_html__( 'Published', 'coblocks' ) )
 		);
 
 		// Wrap the time string in a link, and preface it with 'Posted on'.
 		return sprintf(
 			/* translators: %s: post date */
-			__( '<span class="screen-reader-text">Posted on</span> %s', '@@textdomain' ),
+			__( '<span class="screen-reader-text">Posted on</span> %s', 'coblocks' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 	}

@@ -1,111 +1,59 @@
-ul.wp-block-gallery {
-	padding-left: 5px;
-	margin-left: inherit;
+.entry-content {
+	.wp-block-gallery {
+		&:not([class*="align"]) {
+			margin-bottom: -6px;
+			margin-top: $content__spacer--mobile + 12px;
 
-	li {
-		padding-left: 0;
-	}
-
-	@media (max-width: 599px) {
-		margin-left: -8px !important;
-		margin-right: -8px !important;
-	}
-
-	li:before {
-		display: none;
-	}
-
-	&:not(.components-placeholder):not(.alignfull) {
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	&.alignfull {
-		padding-left: 0;
-		padding-right: 0;
-
-		li:first-child:last-child {
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-
-	a {
-		box-shadow: none !important;
-	}
-
-	@media (min-width: 600px) {
-
-		li {
-
-			&:first-child {
-				margin-left: 0;
-			}
-
-			&:last-child {
-				margin-right: 0;
+			@media screen and (min-width: $content__media-query) {
+				margin-top: $content__spacer + 12px;
 			}
 		}
 
-		&.columns-1 {
+		.blocks-gallery-item:last-child {
+			margin-bottom: 16px;
+		}
 
-			li {
-				margin-left: 0;
-				margin-right: 0;
+		&.alignleft {
+			padding-right: 0 !important;
+		}
+
+		&.alignright {
+			padding-left: 0 !important;
+		}
+
+		&.alignleft,
+		&.alignright {
+			margin-top: $content__spacer - 17px;
+
+			@media screen and (max-width: $content__align--mobile-media-query--max) {
+				margin-bottom: $content__spacer - 38px !important;
+				margin-top: $content__spacer !important;
+				max-width: none;
+				width: calc(100% - #{$content__padding});
+			}
+
+			@media screen and (min-width: $content__media-query) {
+				padding-left: 0;
+				padding-right: 0;
 			}
 		}
 
-		&.columns-2 {
+		&.alignwide {
+			margin: $content__spacer + 8px auto $content__spacer - 10px;
 
-			li {
-
-				&:nth-child(even) {
-					margin-right: 0;
-				}
-
-				&:nth-child(odd) {
-					margin-left: 0;
-				}
+			@media screen and (min-width: $content__media-query) {
+				margin-bottom: $content__spacer + 6px;
+				margin-top: $content__spacer + 20px;
 			}
 		}
 
-		&.columns-3 {
+		&.alignfull {
+			margin: $content__spacer + 8px 0 $content__spacer - 10px;
 
-			li {
-
-				&:nth-child(3) {
-					margin-right: 0;
-				}
-
-				&:nth-child(4) {
-					margin-left: 0;
-
-					&:last-child {
-						margin-right: 0;
-						margin-left: 0;
-					}
-				}
+			@media screen and (min-width: $content__media-query) {
+				margin-bottom: $content__spacer + 15px;
+				margin-top: $content__spacer + 30px;
 			}
 		}
-
-		&.columns-4 {
-
-			li {
-
-				&:nth-child(4) {
-					margin-right: 0;
-				}
-
-				&:nth-child(5) {
-					margin-left: 0;
-				}
-			}
-		}
-	}
-
-	.has-lightbox & img:hover {
-		cursor: zoom-in;
 	}
 }
-
-

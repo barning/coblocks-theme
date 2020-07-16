@@ -1,23 +1,58 @@
-.has-black-background-color {
-	background-color: $black;
+
+$color_1: #191521;
+$color_2: #363b40;
+$color_3: #565d67;
+$color_4: #8f949e;
+$color_5: #f5f5f5;
+$color_6: #ffffff;
+$color_7: #1e35b9;
+$color_8: #E7E9FB;
+$color_9: #d0eac4;
+$color_10: #fbf3d6;
+
+$colors: (first, $color_1), (second, $color_2), (third, $color_3), (fourth, $color_4), (fifth, $color_5), (sixth, $color_6),
+	(seventh, $color_7), (eigth, $color_8), (nineth, $color_9), (tenth, $color_10);
+
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
 }
 
-.has-gray-background-color {
-	background-color: $gray;
+// Fallback color for .has-background-color.
+.has-background:not([class*="background-color"]) {
+	background-color: $color--has-background-color-fallback;
 }
 
-.has-light-gray-background-color {
-	background-color: $background;
+// Fallbacks
+$color_1: #040402;
+$color_2: #191521;
+$color_3: #565d67;
+$color_4: #8f949e;
+$color_5: #f8f8f8;
+$color_6: #575ffd;
+$color_7: #21e8af;
+$color_8: #ff5b44;
+$color_9: #fee13d;
+
+$colors: (dark-black, $color_1), (black, $color_2), (gray, $color_3), (medium-gray, $color_4), (light-gray, $color_5), (coblocks-blue, $color_6),
+	(coblocks-green, $color_7), (coblocks-orange, $color_8), (coblocks-yellow, $color_9);
+
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
 }
 
-.has-light-gray-color {
-	color: $background;
-}
-
-.has-black-color {
-	color: $black;
-}
-
-.has-gray-color {
-	color: $gray;
+// Fallback color for .has-background-color.
+.has-background:not([class*="background-color"]) {
+	background-color: $color--has-background-color-fallback;
 }

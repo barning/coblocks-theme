@@ -1,8 +1,8 @@
-# @@pkg.name #
+# CoBlocks #
 
 Contributors: richtabor, themebeans, coblocks
 Requires at least: 4.7
-Tested up to: 4.9.6
+Tested up to: 5.0.0
 Version: @@pkg.version
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -55,10 +55,6 @@ normalize.css, Copyright 2012-2018 Nicolas Gallagher and Jonathan Neal
 License: MIT
 Source: https://necolas.github.io/normalize.css/
 
-FitVids.js, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-License: WTFPL
-Source: http://sam.zoy.org/wtfpl/
-
 Heebo Font, Copyright Google, Inc. (https://github.com/meirsadan/heebo)
 License: Open Font License (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 Source: https://fonts.google.com/specimen/Heebo
@@ -79,6 +75,59 @@ Images in assets/images/ directory, Copyright: Inventionn, LLC DBA CoBlocks
 License: GPLv2 or later
 
 == Changelog ==
+
+= 1.2.5 =
+* Fix: Adjust Alert block typography control functionality
+* Tweak: Add proper styling for the new <code> format within the block editor
+
+= 1.2.4 =
+* Tweak: Add minor style tweak for the Blubrry podcast player
+* Fix: Adjust blockquote fallback
+
+= 1.2.3 =
+* Tweak: Add default blockquote fallback styling
+
+= 1.2.2 =
+* Tweak: Touch up quote block styling
+* Tweak: Improve Click to Tweet styles
+* Tweak: Add fallback background color for custom colors
+* Tweak: Tweak left/right aligned gallery block styles
+* Tweak: Remove Gutenberg as a suggested plugin
+* Tweak: Adjust search results view with better spacing between articles
+
+= 1.2.1 =
+* Fix: Revert header menu font size
+
+= 1.2.0 =
+* New: Major update to editor styles for the Gutenberg block editor
+* New: Add compatibility for WordPress 5.0
+* New: Add support for MacOS Mojave Safari dark mode by using prefers-color-scheme: dark
+* New: Add support for responsive embeds
+* Remove: Fitvids.js, as Tabor now supports responsive embeds by default
+
+= 1.1.8 =
+* Tweak: Add styling for the new CoBlocks Social block
+
+= 1.1.7 =
+* Tweak: Adjust Block Gallery styling
+
+= 1.1.6 =
+* New: Add support for Block Gallery, gallery Gutenberg Blocks - https://wpblockgallery.com
+* Tweak: Update editor font size name labels
+* Tweak: Update styles for the CoBlocks Author block
+
+= 1.1.5 =
+* New: Add social icon support for Slack
+* New: Add custom font sizes using editor-font-sizes
+* New: Add a beautiful default color palette
+* Fix: Firefox display issue with the WordPress social icon
+* Tweak: Adjust positioning of social icons
+* Tweak: Tweak editor styles to accurately reflect Gutenberg 3.9+
+* Tweak: Add improved for Auto Load Next Post v1.5+ (Thanks Sébastien Dumont!)
+* Tweak: .has-light-gray-color to use a non-transparent color
+
+= 1.1.4 =
+* New: Add social icon support for Mastodon
 
 = 1.1.3 =
 * Tweak: Adjust verse and preformatted block styling

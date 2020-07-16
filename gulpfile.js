@@ -3,10 +3,9 @@ var pkg				= require('./package.json');
 var project 			= pkg.name;
 var project 			= project.replace(/_/g, " ");
 var slug			= pkg.slug;
-var projectURL			= 'http://theme.coblocks.dev/';
 
 // Translation.
-var text_domain			= '@@textdomain';
+var text_domain			= 'coblocks';
 var destFile			= slug+'.pot';
 var packageName			= project;
 var bugReport			= pkg.author_uri;
@@ -23,15 +22,9 @@ var scssDistFiles		= './_dist/'+slug+'/scss/**/';
 var scssDistFolderPackageDest	= './_dist/'+slug+'/assets/scss/';
 var styleCustomizerSCSSDir	= './_dist/'+slug+'/inc/customizer/scss';
 
-// Visual Editor.
-var editorStyles		= './scss/editor.scss';
+// Editor.
+var editorStyles		= './scss/style-editor.scss';
 var editorDestination		= './assets/css/';
-var distEditorStyleSheet	= './_dist/'+slug+'/assets/css/editor.css';
-
-// Gutenberg Editor.
-var gutenbergStyles		= './scss/gutenberg.scss';
-var gutenbergDestination	= './assets/css/';
-var distGutenbergStyleSheet	= './_dist/'+slug+'/assets/css/gutenberg.css';
 
 // Customize Controls.
 var customizeControlsStyles	= './inc/customizer/scss/customize-controls.scss';
@@ -82,7 +75,6 @@ var autoprefixer 	= require('gulp-autoprefixer');
 var concat	   	= require('gulp-concat');
 var uglify	   	= require('gulp-uglify');
 var del                 = require('del');
-var imagemin	 	= require('gulp-imagemin');
 var rename	   	= require('gulp-rename');
 var lineec	   	= require('gulp-line-ending-corrector');
 var filter	   	= require('gulp-filter');
@@ -95,7 +87,6 @@ var sort		= require('gulp-sort');
 var replace	  	= require('gulp-replace-task');
 var zip		  	= require('gulp-zip');
 var copy		= require('gulp-copy');
-var open	  	= require('gulp-open');
 var gulpif              = require('gulp-if');
 var cache               = require('gulp-cache');
 
@@ -106,12 +97,21 @@ function clearCache(done) {
 gulp.task(clearCache);
 
 gulp.task( 'browser-sync', function(done) {
-	browserSync.init( {
-		proxy: projectURL,
-		open: true,
-		injectChanges: true,
-	} );
-	done();
+
+	try {
+		var environmentFile	= require('./environment.json');
+	} catch (error) {
+		done();
+	}
+
+	if ( environmentFile ) {
+		browserSync.init( {
+			proxy: environmentFile.devURL,
+			open: true,
+			injectChanges: true,
+		} );
+		done();
+	}
 });
 
 gulp.task( 'styles', function(done) {
@@ -159,21 +159,6 @@ gulp.task( 'styles', function(done) {
 	]
 	}))
 	.pipe( gulp.dest( './' ) )
-	.pipe( browserSync.stream() )
-	done();
-});
-
-gulp.task( 'gutenberg-styles', function(done) {
-	gulp.src( gutenbergStyles, { allowEmpty: true } )
-	.pipe( sass( {
-		errLogToConsole: true,
-		outputStyle: 'expanded',
-		precision: 10
-	} ) )
-	.on('error', console.error.bind(console))
-	.pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
-	.pipe( lineec() )
-	.pipe( gulp.dest( gutenbergDestination ) )
 	.pipe( browserSync.stream() )
 	done();
 });
@@ -333,22 +318,16 @@ gulp.task( 'build_notice', function() {
 	.pipe( notify( { message: 'Your build of ' + packageName + ' is complete.', onLast: false } ) );
 });
 
-gulp.task( 'upload-to-wordpressorg', function(done){
-	gulp.src(__filename)
-	.pipe( open( { uri: 'https://wordpress.org/themes/upload/' } ) )
-	done();
-});
-
-gulp.task( 'default', gulp.series( 'clearCache', 'styles', 'gutenberg-styles', 'editor-styles', 'customizer-styles', 'browser-sync', function(done) {
+gulp.task( 'default', gulp.series( 'clearCache', 'styles', 'editor-styles', 'customizer-styles', 'browser-sync', function(done) {
 	gulp.watch( projectPHPWatchFiles, gulp.parallel(reload));
 	gulp.watch( styleWatchFiles, gulp.parallel('styles'));
 	gulp.watch( customizerWatchFiles, gulp.parallel('customizer-styles'));
-	gulp.watch( gutenbergStyles, gulp.parallel('gutenberg-styles'));
+	gulp.watch( editorStyles, gulp.parallel('editor-styles'));
 	gulp.watch( jsWatchFiles, gulp.parallel(reload));
 	done();
 } ) );
 
-gulp.task( 'build-process', gulp.series( 'clearCache', 'clean', 'clean_demo', 'styles', 'css_variables', 'translate', 'gutenberg-styles', 'editor-styles', 'customizer-styles', 'copy', 'variables', 'clean_dist_customizer_scss', 'clean_dist_scss', 'zip-theme', 'move-to-demo', 'clean-dist', 'upload-to-wordpressorg', function(done) {
+gulp.task( 'build-process', gulp.series( 'clearCache', 'clean', 'clean_demo', 'styles', 'css_variables', 'translate', 'editor-styles', 'customizer-styles', 'copy', 'variables', 'clean_dist_customizer_scss', 'clean_dist_scss', 'zip-theme', 'move-to-demo', 'clean-dist', function(done) {
 	done();
 } ) );
 

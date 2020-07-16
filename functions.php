@@ -4,9 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package     @@pkg.name
- * @author      @@pkg.author
- * @license     @@pkg.license
+ * @package CoBlocks
  */
 
 /**
@@ -28,9 +26,9 @@ function coblocks_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on CoBlocks, use a find and replace
-	 * to change '@@textdomain' to the name of your theme in all the template files
+	 * to change 'coblocks' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( '@@textdomain', get_parent_theme_file_path( '/languages' ) );
+	load_theme_textdomain( 'coblocks', get_parent_theme_file_path( '/languages' ) );
 
 	/*
 	 * Add default posts and comments RSS feed links to head.
@@ -73,9 +71,9 @@ function coblocks_setup() {
 	 */
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary Menu', '@@textdomain' ),
-			'footer'  => esc_html__( 'Footer Menu', '@@textdomain' ),
-			'social'  => esc_html__( 'Social Menu', '@@textdomain' ),
+			'primary' => esc_html__( 'Primary Menu', 'coblocks' ),
+			'footer'  => esc_html__( 'Footer Menu', 'coblocks' ),
+			'social'  => esc_html__( 'Social Menu', 'coblocks' ),
 		)
 	);
 
@@ -93,39 +91,6 @@ function coblocks_setup() {
 		)
 	);
 
-	/**
-	 * Custom colors for use in the editor.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/reference/theme-support/
-	 */
-	add_theme_support(
-		'editor-color-palette', array(
-			array(
-				'name'  => esc_html__( 'Black', '@@textdomain' ),
-				'slug'  => 'black',
-				'color' => '#2a2a2a',
-			),
-			array(
-				'name'  => esc_html__( 'Gray', '@@textdomain' ),
-				'slug'  => 'gray',
-				'color' => '#727477',
-			),
-			array(
-				'name'  => esc_html__( 'Light Gray', '@@textdomain' ),
-				'slug'  => 'light-gray',
-				'color' => '#f8f8f8',
-			),
-		)
-	);
-
-	// Add support for full width images and other content such as videos.
-	add_theme_support( 'align-wide' );
-
-	/*
-	 * This theme styles the visual editor to resemble the theme style.
-	 */
-	add_editor_style( array( 'assets/css/editor.css', coblocks_fonts_url() ) );
-
 	/*
 	 * Enable support for Customizer Selective Refresh.
 	 * See: https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/
@@ -142,6 +107,115 @@ function coblocks_setup() {
 		)
 	);
 
+	/**
+	 * Custom colors for use in the editor.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/reference/theme-support/
+	 */
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Vulcan', 'coblocks' ),
+				'slug'  => 'first',
+				'color' => '#191521',
+			),
+			array(
+				'name'  => esc_html__( 'Marlin', 'coblocks' ),
+				'slug'  => 'second',
+				'color' => '#363b40',
+			),
+			array(
+				'name'  => esc_html__( 'Nevada', 'coblocks' ),
+				'slug'  => 'third',
+				'color' => '#565d67',
+			),
+			array(
+				'name'  => esc_html__( 'Mantatee', 'coblocks' ),
+				'slug'  => 'fourth',
+				'color' => '#8f949e',
+			),
+			array(
+				'name'  => esc_html__( 'Desert Storm', 'coblocks' ),
+				'slug'  => 'fifth',
+				'color' => '#f5f5f5',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'coblocks' ),
+				'slug'  => 'sixth',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Torea Bay', 'coblocks' ),
+				'slug'  => 'seventh',
+				'color' => '#1e35b9',
+			),
+			array(
+				'name'  => esc_html__( 'Glitter', 'coblocks' ),
+				'slug'  => 'eigth',
+				'color' => '#E7E9FB',
+			),
+			array(
+				'name'  => esc_html__( 'Peppermint', 'coblocks' ),
+				'slug'  => 'nineth',
+				'color' => '#d0eac4',
+			),
+			array(
+				'name'  => esc_html__( 'Pipi', 'coblocks' ),
+				'slug'  => 'tenth',
+				'color' => '#fbf3d6',
+			),
+		)
+	);
+
+	/**
+	 * Custom font sizes for use in the editor.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#block-font-sizes
+	 */
+	add_theme_support(
+		'editor-font-sizes', array(
+			array(
+				'name'      => esc_html__( 'Small', 'coblocks' ),
+				'shortName' => esc_html__( 'S', 'coblocks' ),
+				'size'      => 16,
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => esc_html__( 'Regular', 'coblocks' ),
+				'shortName' => esc_html__( 'M', 'coblocks' ),
+				'size'      => 19,
+				'slug'      => 'regular',
+			),
+			array(
+				'name'      => esc_html__( 'Large', 'coblocks' ),
+				'shortName' => esc_html__( 'L', 'coblocks' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			),
+			array(
+				'name'      => esc_html__( 'Huge', 'coblocks' ),
+				'shortName' => esc_html__( 'XL', 'coblocks' ),
+				'size'      => 32,
+				'slug'      => 'huge',
+			),
+		)
+	);
+
+	// Add support for default block styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Enqueue editor styles.
+	add_editor_style( 'assets/css/style-editor.css' );
+
+	// Enqueue fonts in the editor.
+	add_editor_style( coblocks_fonts_url() );
+
 	/*
 	 * Define starter content for the theme.
 	 * See: https://make.wordpress.org/core/2016/11/30/starter-content-for-themes-in-4-7/
@@ -154,7 +228,7 @@ function coblocks_setup() {
 
 		'attachments' => array(
 			'image-logo' => array(
-				'post_title' => _x( 'Logo', 'Theme starter content', '@@textdomain' ),
+				'post_title' => _x( 'Logo', 'Theme starter content', 'coblocks' ),
 				'file'       => 'assets/images/logo.png',
 			),
 		),
@@ -162,7 +236,7 @@ function coblocks_setup() {
 		'theme_mods'  => array(
 			'show_on_front'         => 'page',
 			'page_for_posts'        => '{{blog}}',
-			'blogdescription'       => _x( 'CoBlocks, A beautiful Gutenberg-centric WordPress theme', 'Theme starter content', '@@textdomain' ),
+			'blogdescription'       => _x( 'CoBlocks, A beautiful Gutenberg WordPress theme', 'Theme starter content', 'coblocks' ),
 			'custom_logo'           => '{{image-logo}}',
 			'custom_logo_max_width' => coblocks_defaults( 'custom_logo_max_width' ),
 		),
@@ -175,21 +249,21 @@ function coblocks_setup() {
 
 		'nav_menus'   => array(
 			'primary' => array(
-				'name'  => esc_html__( 'Primary Menu', '@@textdomain' ),
+				'name'  => esc_html__( 'Primary Menu', 'coblocks' ),
 				'items' => array(
 					'page_blog'    => array(
-						'title' => _x( 'Articles', 'Theme starter content', '@@textdomain' ),
+						'title' => _x( 'Articles', 'Theme starter content', 'coblocks' ),
 					),
 					'page_about'   => array(
-						'title' => _x( 'About', 'Theme starter content', '@@textdomain' ),
+						'title' => _x( 'About', 'Theme starter content', 'coblocks' ),
 					),
 					'page_contact' => array(
-						'title' => _x( 'Contact', 'Theme starter content', '@@textdomain' ),
+						'title' => _x( 'Contact', 'Theme starter content', 'coblocks' ),
 					),
 				),
 			),
 			'social'  => array(
-				'name'  => esc_html__( 'Social Menu', '@@textdomain' ),
+				'name'  => esc_html__( 'Social Menu', 'coblocks' ),
 				'items' => array(
 					'link_twitter',
 					'link_instagram',
@@ -199,9 +273,9 @@ function coblocks_setup() {
 	);
 
 	/**
-	 * Filters @@pkg.name array of starter content.
+	 * Filters CoBlocks array of starter content.
 	 *
-	 * @since @@pkg.name 1.0
+	 * @since CoBlocks 1.0
 	 *
 	 * @param array $starter_content Array of starter content.
 	 */
@@ -219,9 +293,9 @@ add_action( 'after_setup_theme', 'coblocks_setup' );
 function coblocks_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer', '@@textdomain' ),
+			'name'          => esc_html__( 'Footer', 'coblocks' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Appears in the site footer.', '@@textdomain' ),
+			'description'   => esc_html__( 'Appears in the site footer.', 'coblocks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h6 class="h2">',
@@ -237,14 +311,12 @@ add_action( 'widgets_init', 'coblocks_widgets_init' );
 function coblocks_scripts() {
 
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'coblocks-fonts', coblocks_fonts_url(), array(), null );
+	wp_enqueue_style( 'coblocks-fonts', coblocks_fonts_url(), false, '@@pkg.version', 'all' );
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'coblocks-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'coblocks-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// Scripts.
-	wp_enqueue_script( 'jquery-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids.js' ), array( 'jquery' ), '@@pkg.version', true );
-	wp_enqueue_script( 'coblocks-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '@@pkg.version', true );
 	wp_enqueue_script( 'coblocks-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '@@pkg.version', true );
 	wp_enqueue_script( 'coblocks-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '@@pkg.version', true );
 
@@ -254,31 +326,35 @@ function coblocks_scripts() {
 	}
 
 	// Translations in the custom functions.
-	$coblocks_l10n['expand']   = __( 'Expand child menu', '@@textdomain' );
-	$coblocks_l10n['collapse'] = __( 'Collapse child menu', '@@textdomain' );
-	$coblocks_l10n['icon']     = coblocks_get_svg(
-		array(
-			'icon'     => 'down',
-			'fallback' => true,
-		)
-	);
-
+	$coblocks_l10n['expand']   = __( 'Expand child menu', 'coblocks' );
+	$coblocks_l10n['collapse'] = __( 'Collapse child menu', 'coblocks' );
+	// $coblocks_l10n['icon']     = coblocks_get_svg(
+	// array(
+	// 'icon'     => 'down',
+	// 'fallback' => true,
+	// )
+	// );
 	wp_localize_script( 'coblocks-navigation', 'coblocksScreenReaderText', $coblocks_l10n );
 }
 add_action( 'wp_enqueue_scripts', 'coblocks_scripts' );
 
 /**
- * Enqueue theme styles within Gutenberg.
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
  */
-function coblocks_gutenberg_styles() {
-
-	// Load the theme styles within Gutenberg.
-	wp_enqueue_style( 'coblocks-gutenberg', get_theme_file_uri( '/assets/css/gutenberg.css' ), false, '@@pkg.version', 'all' );
-
-	// Add custom fonts to Gutenberg.
-	wp_enqueue_style( 'coblocks-fonts', coblocks_fonts_url(), array(), null );
+function coblocks_skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
 }
-add_action( 'enqueue_block_editor_assets', 'coblocks_gutenberg_styles' );
+add_action( 'wp_print_footer_scripts', 'coblocks_skip_link_focus_fix' );
 
 /**
  * Enqueue inline script for the accessibility settings module.
@@ -317,14 +393,14 @@ function coblocks_fonts_url() {
 	 * supported by Heebo, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$heebo = esc_html_x( 'on', 'Heebo font: on or off', '@@textdomain' );
+	$heebo = esc_html_x( 'on', 'Heebo font: on or off', 'coblocks' );
 
 	/*
 	 * Translators: If there are characters in your language that are not
 	 * supported by Lora, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$lora = esc_html_x( 'on', 'Lora font: on or off', '@@textdomain' );
+	$lora = esc_html_x( 'on', 'Lora font: on or off', 'coblocks' );
 
 	if ( 'off' !== $heebo || 'off' !== $lora ) {
 		$font_families = array();
@@ -438,6 +514,11 @@ function coblocks_hex2rgb( $color ) {
 }
 
 /**
+ * SVG Icons class.
+ */
+require get_theme_file_path( '/classes/class-coblocks-svg-icons.php' );
+
+/**
  * Load the TGMPA class.
  */
 require get_parent_theme_file_path( '/inc/plugins.php' );
@@ -458,6 +539,7 @@ require get_theme_file_path( '/inc/template-functions.php' );
 require get_theme_file_path( '/inc/customizer/defaults.php' );
 require get_theme_file_path( '/inc/customizer/customizer.php' );
 require get_theme_file_path( '/inc/customizer/customizer-css.php' );
+require get_theme_file_path( '/inc/customizer/customizer-editor.php' );
 require get_theme_file_path( '/inc/customizer/sanitization.php' );
 
 /**
