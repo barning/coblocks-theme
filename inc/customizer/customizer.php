@@ -37,33 +37,11 @@ function coblocks_customize_register( $wp_customize ) {
 	 * Add custom controls.
 	 */
 	require get_parent_theme_file_path( 'inc/customizer/class-coblocks-range-control.php' );
-	require get_parent_theme_file_path( 'inc/customizer/class-coblocks-upgrade-control.php' );
 
 	/**
 	 * Register custom controls.
 	 */
 	$wp_customize->register_control_type( 'CoBlocks_Range_Control' );
-	$wp_customize->register_section_type( 'CoBlocks_Upgrade_Control' );
-
-	/**
-	 * Add the upgrade section, only if either of the CoBlocks plugins are not installed.
-	 *
-	 * @see https://github.com/justintadlock/trt-customizer-pro
-	 */
-	if ( ! class_exists( 'CoBlocks' ) || class_exists( 'CoBlocks_Pro' ) ) {
-
-		$wp_customize->add_section(
-			new CoBlocks_Upgrade_Control(
-				$wp_customize, 'theme_upgrade', array(
-					'type'     => 'upgrade-theme',
-					'title'    => esc_html__( 'Get the CoBlocks Plugin', 'coblocks' ),
-					'pro_text' => esc_html__( 'Download', 'coblocks' ),
-					'pro_url'  => 'https://coblocks.com',
-					'priority' => 9999,
-				)
-			)
-		);
-	}
 
 	/**
 	 * Top-Level Customizer sections and panels.

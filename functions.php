@@ -519,11 +519,6 @@ function coblocks_hex2rgb( $color ) {
 require get_theme_file_path( '/classes/class-coblocks-svg-icons.php' );
 
 /**
- * Load the TGMPA class.
- */
-require get_parent_theme_file_path( '/inc/plugins.php' );
-
-/**
  * Custom template tags for this theme.
  */
 require get_theme_file_path( '/inc/template-tags.php' );

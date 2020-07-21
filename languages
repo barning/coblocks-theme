@@ -1,0 +1,371 @@
+# Copyright (C) 2020 BarningBlocks
+# This file is distributed under the same license as the BarningBlocks package.
+msgid ""
+msgstr ""
+"Project-Id-Version: BarningBlocks\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: niklasbarning.de\n"
+"Last-Translator: Rich Tabor of CoBlocks <hello@coblocks.com> || Niklas Barning <moin@niklasbarning.de>\n"
+"Report-Msgid-Bugs-To: https://niklasbarning.de\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:12
+msgid "Yikes!"
+msgstr ""
+
+#: 404.php:13
+msgid "It looks like you're lost."
+msgstr ""
+
+#: archive.php:35
+msgid "Previous page"
+msgstr ""
+
+#: archive.php:36
+msgid "Next page"
+msgstr ""
+
+#: archive.php:37, index.php:43, search.php:43
+msgid "Page"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:39
+msgctxt "comments title"
+msgid "%1$s reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:35
+msgctxt "comments title"
+msgid "One reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:68, index.php:41, search.php:41
+msgid "Previous"
+msgstr ""
+
+#: comments.php:69, index.php:42, search.php:42
+msgid "Next"
+msgstr ""
+
+#: comments.php:80
+msgid "Comments are closed."
+msgstr ""
+
+#. translators: 1: theme, 2: designer
+#: footer.php:30
+msgid "Powered by %1$s"
+msgstr ""
+
+#: footer.php:37, functions.php:75
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:74, functions.php:252, header.php:62
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:76, functions.php:266, header.php:39
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:118
+msgid "Vulcan"
+msgstr ""
+
+#: functions.php:123
+msgid "Marlin"
+msgstr ""
+
+#: functions.php:128
+msgid "Nevada"
+msgstr ""
+
+#: functions.php:133
+msgid "Mantatee"
+msgstr ""
+
+#: functions.php:138
+msgid "Desert Storm"
+msgstr ""
+
+#: functions.php:143
+msgid "White"
+msgstr ""
+
+#: functions.php:148
+msgid "Torea Bay"
+msgstr ""
+
+#: functions.php:153
+msgid "Glitter"
+msgstr ""
+
+#: functions.php:158
+msgid "Peppermint"
+msgstr ""
+
+#: functions.php:163
+msgid "Pipi"
+msgstr ""
+
+#: functions.php:178
+msgid "Small"
+msgstr ""
+
+#: functions.php:179
+msgid "S"
+msgstr ""
+
+#: functions.php:184
+msgid "Regular"
+msgstr ""
+
+#: functions.php:185
+msgid "M"
+msgstr ""
+
+#: functions.php:190
+msgid "Large"
+msgstr ""
+
+#: functions.php:191
+msgid "L"
+msgstr ""
+
+#: functions.php:196
+msgid "Huge"
+msgstr ""
+
+#: functions.php:197
+msgid "XL"
+msgstr ""
+
+#: functions.php:231
+msgctxt "Theme starter content"
+msgid "Logo"
+msgstr ""
+
+#: functions.php:239
+msgctxt "Theme starter content"
+msgid "CoBlocks, A beautiful Gutenberg WordPress theme"
+msgstr ""
+
+#: functions.php:255
+msgctxt "Theme starter content"
+msgid "Articles"
+msgstr ""
+
+#: functions.php:258
+msgctxt "Theme starter content"
+msgid "About"
+msgstr ""
+
+#: functions.php:261
+msgctxt "Theme starter content"
+msgid "Contact"
+msgstr ""
+
+#: functions.php:296
+msgid "Footer"
+msgstr ""
+
+#: functions.php:298
+msgid "Appears in the site footer."
+msgstr ""
+
+#: functions.php:329
+msgid "Expand child menu"
+msgstr ""
+
+#: functions.php:330
+msgid "Collapse child menu"
+msgstr ""
+
+#: functions.php:396
+msgctxt "Heebo font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:403
+msgctxt "Lora font: on or off"
+msgid "on"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:66
+msgid "Menu"
+msgstr ""
+
+#: search.php:19
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:17
+msgid "Searching for: %s"
+msgstr ""
+
+#: search.php:51
+msgid "Sorry, but nothing matched your search terms. Please try searching again."
+msgstr ""
+
+#: searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:15, inc/template-tags.php:71
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: inc/auto-load-next-post.php:41
+msgid "Read my next article"
+msgstr ""
+
+#. translators: WordPress version
+#. translators: WordPress version
+#. translators: WordPress version
+#: inc/back-compat.php:32, inc/back-compat.php:42, inc/back-compat.php:55
+msgid "CoBlocks requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again."
+msgstr ""
+
+#: inc/jetpack.php:47
+msgid "Load More..."
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Toggle Night Mode"
+msgstr ""
+
+#: inc/template-tags.php:25
+msgctxt "settings button"
+msgid "Settings"
+msgstr ""
+
+#. translators: %s: post author
+#: inc/template-tags.php:142
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:186
+msgid "Published"
+msgstr ""
+
+#. translators: %s: post date
+#: inc/template-tags.php:192
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr ""
+
+#: components/page/content-page.php:42, components/post/content.php:42
+msgid "Pages:"
+msgstr ""
+
+#: inc/customizer/customizer.php:51
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:72
+msgid "Max Width"
+msgstr ""
+
+#: inc/customizer/customizer.php:98
+msgid "Mobile Max Width"
+msgstr ""
+
+#: inc/customizer/customizer.php:123
+msgid "Border Radius"
+msgstr ""
+
+#: inc/customizer/customizer.php:141
+msgid "Display the Site Title and Logo"
+msgstr ""
+
+#: inc/customizer/customizer.php:158
+msgid "Header Search"
+msgstr ""
+
+#: inc/customizer/customizer.php:159
+msgid "A site-wide searching element next to the header navigation."
+msgstr ""
+
+#: inc/customizer/customizer.php:176
+msgid "Night Mode"
+msgstr ""
+
+#: inc/customizer/customizer.php:177
+msgid "Enable for readers to view content easily while in the dark."
+msgstr ""
+
+#: inc/customizer/customizer.php:194
+msgid "Author"
+msgstr ""
+
+#: inc/customizer/customizer.php:195
+msgid "Add the post author metadata below the post title."
+msgstr ""
+
+#: inc/customizer/customizer.php:212
+msgid "Categories"
+msgstr ""
+
+#: inc/customizer/customizer.php:213
+msgid "Enable or disable categories that display in the post footer."
+msgstr ""
+
+#: inc/customizer/customizer.php:230
+msgid "Tags"
+msgstr ""
+
+#: inc/customizer/customizer.php:231
+msgid "Enable or disable tags that display in the post footer."
+msgstr ""
+
+#: inc/customizer/customizer.php:258
+msgid "Heading Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:275
+msgid "Alt Heading Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:292
+msgid "Text Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:309
+msgid "Header Icon Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:326
+msgid "Navigation Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:343
+msgid "Mobile Navigation Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:360
+msgid "Footer Background Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:377
+msgid "Footer Text Color"
+msgstr ""

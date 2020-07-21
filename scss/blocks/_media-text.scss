@@ -1,0 +1,7 @@
+/* Make sure media & text blocks always stack image, then text */
+@media screen and (max-width: 600px){
+  .has-media-on-the-right {
+    display: flex;
+    flex-direction: column;
+  }
+}
