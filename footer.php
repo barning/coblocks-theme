@@ -25,11 +25,6 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></a>
 				</span>
 
-				<span class="site-theme">
-					<?php /* translators: 1: theme, 2: designer */ ?>
-					<a href="https://coblocks.com/" class="powered-by-coblocks"><?php printf( esc_html__( 'Powered by %1$s', 'coblocks' ), 'CoBlocks' ); ?></a>
-				</span>
-
 			</div>
 
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>

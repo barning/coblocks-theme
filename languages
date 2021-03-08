@@ -1,4 +1,4 @@
-# Copyright (C) 2020 BarningBlocks
+# Copyright (C) 2021 BarningBlocks
 # This file is distributed under the same license as the BarningBlocks package.
 msgid ""
 msgstr ""
@@ -61,12 +61,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#. translators: 1: theme, 2: designer
-#: footer.php:30
-msgid "Powered by %1$s"
-msgstr ""
-
-#: footer.php:37, functions.php:75
+#: footer.php:32, functions.php:75
 msgid "Footer Menu"
 msgstr ""
 
